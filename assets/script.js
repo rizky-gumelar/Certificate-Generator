@@ -11,6 +11,8 @@ var canvas = document.getElementById("certificatecanvas");
 var ctx = canvas.getContext("2d");
 var certImage = new Image();
 
+//imageObj.src = "my-canvas.jpeg";
+
 var canvasOffset = canvas.getBoundingClientRect();
 var offsetX = canvasOffset.left;
 var offsetY = canvasOffset.top;
@@ -56,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
     canvas.width = certImage.width;
     canvas.height = certImage.height;
     defaultFontSize = canvas.width / 100;
+    //ctx.drawImage(imageObj, 69, 50, 100, 100);
     console.log(defaultFontSize);
     drawTextfromInputs();
     addListenerToInputs();
@@ -360,7 +363,7 @@ function updateDataset(dataname, value, mode = "w") {
       ] =
         Number(
           checkedCheckboxes[i].parentNode.querySelector(".certinputs").dataset[
-            dataname
+          dataname
           ]
         ) + Number(value);
     } else {
@@ -610,7 +613,7 @@ downloadZipButton.addEventListener("click", function (e) {
           var endTime = new Date();
           var timeDiff = endTime - startTime;
           console.log("Time Taken: " + timeDiff + "ms");
-          progress.innerHTML = `Generated ${totalRows} certificates in ${timeDiff/1000} seconds`;
+          progress.innerHTML = `Generated ${totalRows} certificates in ${timeDiff / 1000} seconds`;
 
 
           loaderbody.style.display = "flex";
